@@ -3,8 +3,6 @@ source $ZSH_ROOT/antigen/antigen.zsh
 
 antigen-use oh-my-zsh
 
-#antigen bundle sorin-ionescu/prezto
-
 antigen-bundle npm
 antigen-bundle bower
 antigen-bundle grunt
@@ -21,7 +19,7 @@ antigen theme $ZSH_ROOT/themes/foo foo
 antigen-apply
 
 
-eval `dircolors $ZSH_ROOT/dircolors.custom`
+eval `dircolors $ZSH_ROOT/dircolors`
 
 
 export GOROOT=/opt/go
