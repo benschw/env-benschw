@@ -1,5 +1,7 @@
 ### Install
 
+	chsh -s /bin/zsh
+
 	git clone git@github.com:benschw/zsh-benschw.git ~/.zsh
 	cd ~/.vim
 	git submodule init
