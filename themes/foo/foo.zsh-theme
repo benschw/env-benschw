@@ -1,22 +1,17 @@
 if [ "$(whoami)" = "root" ] 
-then CARETCOLOR="red"
-else CARETCOLOR="white"
+then CARETCOLOR="white"
+else CARETCOLOR="8"
 fi
 
-host_color=0
-local i=1
-for val in $(echo $HOST | od -A n -t dC); do
-	host_color=$(($host_color + $i * $val))
-	i=$((i + 1))
-done
-host_color=$((1 + $host_color % 7))
+
+
 
 return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-PROMPT='%{${fg[blue]}%}${PWD/#$HOME/~}${reset_color}%B%F{8}❯ %f%b '
-#PROMPT="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%}"
+PROMPT='%{${fg[blue]}%}${PWD/#$HOME/~}${reset_color}%B%F{$CARETCOLOR}❯ %f%b '
 
-RPS1='${return_code} ${(@s:/:)pwd} $(git_prompt_info) %D{%H:%M:%S}'
+RPS1='$(vi_mode_prompt_info) ${return_code} ${(@s:/:)pwd} $(git_prompt_info) %D{%H:%M:%S}'
+
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
