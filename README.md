@@ -1,8 +1,5 @@
 ### Install
 
-	sudo aptitude install git tmux vim htop jq tree make
-
-
 	git clone git@github.com:benschw/zsh-benschw.git ~/.zsh
 	cd ~/.vim
 	git submodule init
