@@ -1,3 +1,7 @@
 [submodule "antigen"]
 	path = antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule "urxvt-perls"]
+	path = urxvt-perls
+	url = https://github.com/muennich/urxvt-perls.git
+
