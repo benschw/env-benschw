@@ -3,5 +3,5 @@
 	url = https://github.com/zsh-users/antigen.git
 [submodule "urxvt-perls"]
 	path = urxvt-perls
-	url = https://github.com/muennich/urxvt-perls.git
+	url = git@github.com:muennich/urxvt-perls.git
 
