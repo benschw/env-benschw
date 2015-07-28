@@ -1,6 +1,6 @@
 
-	# clipboard
-	apt-get install xsel
+	# rxvt & clipboard perl
+	apt-get install xsel rxvt-unicode-256color
 
 ### Install
 
