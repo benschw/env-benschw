@@ -8,7 +8,7 @@ antigen-bundle bower
 antigen-bundle grunt
 antigen-bundle gradle
 antigen-bundle golang
-antigen-bundle vi-mode
+#antigen-bundle vi-mode
 antigen-bundle git
 antigen-bundle vagrant
 antigen-bundle zsh-users/zsh-syntax-highlighting

@@ -1,3 +1,7 @@
+
+	# clipboard
+	apt-get install xsel
+
 ### Install
 
 	chsh -s /bin/zsh
