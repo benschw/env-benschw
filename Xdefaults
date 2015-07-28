@@ -1,0 +1,46 @@
+!! source: https://github.com/spazzpp2/dotfiles/blob/29819a5ac5e451bfa39bc324378aa508ef75cae8/Molokai.xrdb
+
+URxvt*iso14755: False
+!URxvt*iso14755_52: False
+
+!URxvt*perl-lib:        /home/ben/.zsh/urxvt-perls/
+URxvt*perl-ext-common: default,clipboard
+
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.C-A-V: perl:clipboard:paste_escaped
+
+URxvt.clipboard.copycmd:  xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+
+URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true
+
+
+! borderless and no scrollbar
+URxvt*scrollBar_right: false
+URxvt*scrollBar: false
+!URxvt*borderLess: false
+urxvt*internalBorder:       0
+urxvt*externalBorder:       0
+
+! Theme
+URxvt*background: #000000
+URxvt*foreground: #eaeaea
+URxvt*color0: #000000
+URxvt*color1: #960050
+URxvt*color2: #66aa11
+URxvt*color3: #c47f2c
+URxvt*color4: #7aa6da
+URxvt*color5: #7e40a5
+URxvt*color6: #3579a8
+URxvt*color7: #9999aa
+URxvt*color8: #303030
+URxvt*color9: #ff0090
+URxvt*color10: #80ff00
+URxvt*color11: #ffba68
+URxvt*color12: #5f5fee
+URxvt*color13: #bb88dd
+URxvt*color14: #4eb4fa
+URxvt*color15: #d0d0d0
+
+

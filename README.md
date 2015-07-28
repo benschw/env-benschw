@@ -14,6 +14,7 @@
 	ln -s $HOME/.zsh/zshrc $HOME/.zshrc
 	ln -s $HOME/.zsh/tmux.conf $HOME/.tmux.conf
 	ln -s $HOME/.zsh/gitconfig $HOME/.gitconfig
+	ln -s $HOME/.zsh/Xdefaults $HOME/.Xdefaults
 
 ### powerline fonts
 
