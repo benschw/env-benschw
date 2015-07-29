@@ -1,7 +1,12 @@
 
-return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-PROMPT='%{${fg[blue]}%}${PWD/#$HOME/~}${reset_color}%B%F{8}❯ %f%b '
+return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+current_dir='%{$fg[blue]%}${PWD/#$HOME/~}%{$reset_color%}'
+current_dir='%{$fg[blue]%}%~%{$reset_color%}'
+prompt_carrot="%B%{$fg[grey]%}%#❯%{$reset_color%}%b"
+
+
+PROMPT="${current_dir} ${prompt_carrot} "
 
 RPS1='$(vi_mode_prompt_info) ${return_code} ${(@s:/:)pwd} $(git_prompt_info) %D{%H:%M:%S}'
 

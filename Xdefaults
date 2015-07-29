@@ -31,11 +31,17 @@ URxvt*color0: #000000
 URxvt*color1: #960050
 URxvt*color2: #66aa11
 URxvt*color3: #c47f2c
+
+!blue
 URxvt*color4: #7aa6da
+
 URxvt*color5: #7e40a5
 URxvt*color6: #3579a8
 URxvt*color7: #9999aa
-URxvt*color8: #303030
+
+! dark grey
+URxvt*color8: #585858
+
 URxvt*color9: #ff0090
 URxvt*color10: #80ff00
 URxvt*color11: #ffba68

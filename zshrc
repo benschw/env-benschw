@@ -21,13 +21,16 @@ antigen-apply
 
 eval `dircolors $ZSH_ROOT/dircolors`
 
+export EDITOR='vim'
+export EDITOR='vim'
+export PAGER='less'
 
 export GOROOT=/opt/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
+# curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
+export NVM_DIR="/home/ben/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export EDITOR='vim'
-export EDITOR='vim'
-export PAGER='less'
 
