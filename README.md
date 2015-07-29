@@ -1,22 +1,22 @@
 
-	# rxvt & clipboard perl
-	apt-get install xsel rxvt-unicode-256color
-
-### Install
-
-	chsh -s /bin/zsh
-
-	git clone git@github.com:benschw/zsh-benschw.git ~/.zsh
+	git clone git@github.com:benschw/env-benschw.git ~/.env
 	cd ~/.vim
 	git submodule init
 	git submodule update
 
-	ln -s $HOME/.zsh/zshrc $HOME/.zshrc
-	ln -s $HOME/.zsh/tmux.conf $HOME/.tmux.conf
-	ln -s $HOME/.zsh/gitconfig $HOME/.gitconfig
-	ln -s $HOME/.zsh/Xdefaults $HOME/.Xdefaults
+### Git
+	
+	ln -s $HOME/.env/gitconfig $HOME/.gitconfig
 
-### powerline fonts
+### urxvt
+
+	# rxvt & clipboard perl
+	apt-get install rxvt-unicode-256color xsel
+
+	ln -s $HOME/.env/Xdefaults $HOME/.Xdefaults
+
+
+### Fonts
 
 	git clone https://github.com/powerline/fonts.git
 	cd fonts
@@ -24,3 +24,51 @@
 
 	# update in terminal profile
 
+### Zsh
+
+	chsh -s /bin/zsh
+
+
+	ln -s $HOME/.env/zshrc $HOME/.zshrc
+
+### Tmux
+
+	ln -s $HOME/.env/tmux.conf $HOME/.tmux.conf
+	
+### Vim
+
+	ln -s $HOME/.env/vimrc $HOME/.vimrc
+	
+	# in vim
+	:GoInstallBinaries
+
+	
+### CTags
+
+	apt-get install exuberant-ctags
+	ln -s $HOME/.env/ctags $HOME/.ctags
+
+	# usage
+	ctags .
+
+## Key Bindings
+### vim
+
+
+	\q                - quick notes
+	
+	\\                - toggle NerdTree file browser
+	\<ENTER>          - disable highlighting
+	\r                - toggle relative / absolute line numbers
+
+	\f                - CtrlP
+	\.                - CtrlPTag
+	\w                - buffer explorer
+	\]                - next buffer
+	\[                - previous buffer
+
+### vim-go
+	
+	\b                - go-build
+	\t                - go-test
+	

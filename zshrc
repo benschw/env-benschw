@@ -1,4 +1,4 @@
-ZSH_ROOT=$HOME/.zsh
+ZSH_ROOT=$HOME/.env
 source $ZSH_ROOT/antigen/antigen.zsh
 
 antigen-use oh-my-zsh
