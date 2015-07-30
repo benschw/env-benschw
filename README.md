@@ -1,6 +1,6 @@
 
 	git clone git@github.com:benschw/env-benschw.git ~/.env
-	cd ~/.vim
+	cd ~/.env
 	git submodule init
 	git submodule update
 
