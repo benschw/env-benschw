@@ -43,19 +43,8 @@
 	# in vim
 	:GoInstallBinaries
 
+#### Key Bindings
 	
-### CTags
-
-	apt-get install exuberant-ctags
-	ln -s $HOME/.env/ctags $HOME/.ctags
-
-	# usage
-	ctags .
-
-## Key Bindings
-### vim
-
-
 	\q                - quick notes
 	
 	\\                - toggle NerdTree file browser
@@ -67,9 +56,12 @@
 	\w                - buffer explorer
 	\]                - next buffer
 	\[                - previous buffer
+	
+### CTags
 
-### vim-go
-	
-	\b                - go-build
-	\t                - go-test
-	
+	apt-get install exuberant-ctags
+	ln -s $HOME/.env/ctags $HOME/.ctags
+
+	# usage
+	ctags .
+
