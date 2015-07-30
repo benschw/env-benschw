@@ -37,6 +37,7 @@
 	
 ### Vim
 
+	ln -s $HOME/.env $HOME/.vim
 	ln -s $HOME/.env/vimrc $HOME/.vimrc
 	
 	# in vim
