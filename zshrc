@@ -1,6 +1,8 @@
 ZSH_ROOT=$HOME/.env
 source $ZSH_ROOT/antigen/antigen.zsh
 
+unsetopt share_history
+
 antigen-use oh-my-zsh
 
 antigen-bundle npm
