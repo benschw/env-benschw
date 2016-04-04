@@ -1,21 +1,9 @@
-BASH_ROOT=$HOME/.env
 
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
-
-eval `dircolors $BASH_ROOT/dircolors`
-
-export EDITOR='vim'
-export EDITOR='vim'
-export PAGER='less'
-
-
-export GOROOT=/opt/go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -36,7 +24,6 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 
-PS1='\w\$ '
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -54,9 +41,6 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -lF'
-alias la='ls -A'
-alias l='ls -CF'
 
 
 # enable programmable completion features (you don't need to enable
@@ -69,16 +53,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export TERM=xterm-256color
-[ -n "$TMUX" ] && export TERM=screen-256color
+#export TERM=xterm-256color
+#[ -n "$TMUX" ] && export TERM=screen-256color
 
 export NVM_DIR="/home/ben/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
-alias gw="./gradlew"
-alias bashup="source ~/.bashrc"
 
-. .shellfunc/init.sh
+. $HOME/.shellfunc/init.sh
 
-fortune -a -s | lolcat
