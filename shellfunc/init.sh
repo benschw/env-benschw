@@ -1,6 +1,8 @@
 #!/bin/bash
 BASH_ROOT=$HOME/.env
+
 eval `dircolors $BASH_ROOT/dircolors`
+
 
 PS1='\w\$ '
 
