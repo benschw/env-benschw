@@ -15,7 +15,7 @@ notify_osd(){
 		jess/notify-osd
 }
 
-alias notify-send=notify_send
+alias notify-send=osd
 
 osd(){
 	relies_on notify_osd
