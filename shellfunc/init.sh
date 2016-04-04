@@ -1,9 +1,9 @@
 #!/bin/bash
-. ~/.dockerfcn/common.sh
-. ~/.dockerfcn/osd.sh
-. ~/.dockerfcn/services.sh
-. ~/.dockerfcn/fl.sh
-. ~/.dockerfcn/aws.sh
+. ~/.shellfunc/common.sh
+. ~/.shellfunc/osd.sh
+. ~/.shellfunc/services.sh
+. ~/.shellfunc/fl.sh
+. ~/.shellfunc/aws.sh
 
 zshup() {
 	source ~/.zshrc
