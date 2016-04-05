@@ -1,7 +1,5 @@
 #!/bin/bash
-BASH_ROOT=$HOME/.env
-
-eval `dircolors $BASH_ROOT/dircolors`
+eval `dircolors $ENV_ROOT/dircolors`
 
 
 PS1='\w\$ '
@@ -16,11 +14,11 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 
-. ~/.shellfunc/common.sh
-. ~/.shellfunc/osd.sh
-. ~/.shellfunc/services.sh
-. ~/.shellfunc/fl.sh
-. ~/.shellfunc/aws.sh
+. ~/.env/shellfunc/common.sh
+. ~/.env/shellfunc/osd.sh
+. ~/.env/shellfunc/services.sh
+. ~/.env/shellfunc/fl.sh
+. ~/.env/shellfunc/aws.sh
 
 
 #https://github.com/jfrazelle/dotfiles/blob/master/.dockerfunc

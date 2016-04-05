@@ -1,4 +1,6 @@
 
+ENV_ROOT=$HOME/.env
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -61,5 +63,5 @@ export NVM_DIR="/home/ben/.nvm"
 
 
 
-. $HOME/.shellfunc/init.sh
+. $ENV_ROOT/shellfunc/init.sh
 
