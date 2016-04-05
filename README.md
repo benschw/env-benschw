@@ -27,12 +27,6 @@
 ### bash
 http://superuser.com/questions/552863/bash-home-end-delete-key-inserting-tilde-or-if-preceded-by-escape-key-1-3
 
-### Zsh
-
-	chsh -s /bin/zsh
-
-
-	ln -s $HOME/.env/zshrc $HOME/.zshrc
 
 ### Tmux
 
