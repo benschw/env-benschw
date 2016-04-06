@@ -10,35 +10,28 @@ clean: ## clean up tmp stuff from install
 apt-update:
 	sudo apt-get update
 
+
 urxvt: ## install and configure urxvt and clipboard support
 	# rxvt & clipboard perl
 	sudo apt-get install -y rxvt-unicode-256color xsel
 	
-	ln -sf $HOME/.env/Xdefaults $HOME/.Xdefaults
+	ln -sf $(PWD)/Xdefaults $(HOME)/.Xdefaults
 
 
 git: ## configure git
-	sudo apot-get install -y git
-	ln -sf $(HOME)/.env/gitconfig $(HOME)/.gitconfig
+	sudo apt-get install -y git
+	ln -sf $(PWD)/gitconfig $(HOME)/.gitconfig
 
-fonts:
+
+basic: ## configure tmux, vim, ctags, fonts
+	sudo apt-get install -y tmux vim exuberant-ctags
 	@mkdir -p tmp
 	@git clone https://github.com/powerline/fonts.git tmp/fonts
 	tmp/fonts/install.sh
-
-tmux: ## configure tmux
-	sudo apt-get install -y tmux
-	ln -sf $(HOME)/.env/tmux.conf $(HOME)/.tmux.conf
-
-
-vim: ## configure vim
-	sudo apt-get install -y vim
-	ln -sf $(HOME)/.env/vimrc $(HOME)/.vimrc
+	ln -sf $(PWD)/tmux.conf $(HOME)/.tmux.conf
+	ln -sf $(PWD)/ctags $(HOME)/.ctags
+	ln -sf $(PWD)/vimrc $(HOME)/.vimrc
 	@echo "=> Now run \`:GoInstallBinaries\` within vim"
-
-ctags: ## install and configure ctags for vim
-	sudo apt-get install -y exuberant-ctags
-	ln -sf $(HOME)/.env/ctags $(HOME)/.ctags
 
 misc: ## misc packages: lolcat
 	sudo apt-get install -y lolcat
@@ -49,11 +42,11 @@ docker:
 	sudo bash -c "echo 'deb https://apt.dockerproject.org/repo ubuntu-wily main' > /etc/apt/sources.list.d/docker.list"
 	sudo apt-get update
 	sudo apt-get install -y docker-engine
-	sudo usermod -aG docker ben
+	sudo usermod -aG docker $(USER)
 	sudo systemctl enable docker
 	sudo service docker start
 
-install: apt-update urxvt git fonts tmux vim ctags docker ## Install packages and configuration files
+install: apt-update urxvt git basic misc docker ## Install packages and configuration files
 
 
 
