@@ -23,18 +23,21 @@ git: ## configure git
 	ln -sf $(PWD)/gitconfig $(HOME)/.gitconfig
 
 
-basic: ## configure tmux, vim, ctags, fonts
-	sudo apt-get install -y tmux vim exuberant-ctags
+fonts: ## download and install fonts for vim
 	@mkdir -p tmp
 	@git clone https://github.com/powerline/fonts.git tmp/fonts
 	tmp/fonts/install.sh
+
+basic: ## configure tmux, vim, ctags, fonts
+	sudo apt-get install -y tmux vim exuberant-ctags
+	ln -sf $(PWD)/bashrc $(HOME)/.bashrc
 	ln -sf $(PWD)/tmux.conf $(HOME)/.tmux.conf
 	ln -sf $(PWD)/ctags $(HOME)/.ctags
 	ln -sf $(PWD)/vimrc $(HOME)/.vimrc
 	@echo "=> Now run \`:GoInstallBinaries\` within vim"
 
 misc: ## misc packages: lolcat
-	sudo apt-get install -y lolcat
+	sudo apt-get install -y lolcat fortune-mod
 
 docker:
 	sudo apt-get install -y apt-transport-https ca-certificates linux-image-extra-`uname -r`
@@ -46,7 +49,7 @@ docker:
 	sudo systemctl enable docker
 	sudo service docker start
 
-install: apt-update urxvt git basic misc docker ## Install packages and configuration files
+install: apt-update urxvt git basic misc fonts docker ## Install packages and configuration files
 
 
 
