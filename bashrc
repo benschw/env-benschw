@@ -65,3 +65,6 @@ export NVM_DIR="/home/ben/.nvm"
 
 . $ENV_ROOT/shellfunc/init.sh
 
+
+# added by travis gem
+[ -f /home/ben/.travis/travis.sh ] && source /home/ben/.travis/travis.sh

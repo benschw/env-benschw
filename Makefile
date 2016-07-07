@@ -34,7 +34,7 @@ basic: ## configure tmux, vim, ctags, fonts
 	@echo "=> Now run \`:GoInstallBinaries\` within vim"
 
 misc: ## misc packages: lolcat
-	sudo apt-get install -y lolcat
+	sudo apt-get install -y lolcat fortune cowsay
 
 docker:
 	sudo apt-get install -y apt-transport-https ca-certificates linux-image-extra-`uname -r`

@@ -49,6 +49,7 @@ map <silent> <leader><cr> :noh<cr>
 
 " toggle file browser
 nmap <leader>\ :NERDTreeToggle<cr>
+" let NERDTreeShowHidden=1
 
 " toggle spell check
 map <leader>ss :setlocal spell!<cr>
@@ -65,6 +66,11 @@ map <leader>[ :bprevious<cr>
 
 " \q to open notes
 map <leader>q :e ~/Dropbox/unsorted/notes.md<cr>
+
+
+" resize pane widths
+map <leader>= :vertical resize +5<cr>
+map <leader>- :vertical resize -5<cr>
 
 
 " Settings
