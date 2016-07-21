@@ -9,7 +9,7 @@ export EDITOR='vim'
 export PAGER='less'
 
 
-export GOROOT=/opt/go
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
@@ -32,4 +32,4 @@ alias bashup="source ~/.bashrc"
 
 alias nyan="docker run -it supertest2014/nyan"
 
-fortune -a -s | lolcat
+#fortune -a -s | lolcat
