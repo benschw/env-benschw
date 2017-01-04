@@ -1,41 +1,5 @@
 #!/bin/bash
 
-notify_osd(){
-	del_stopped notify_osd
-
-	docker run -d \
-		-v /etc/localtime:/etc/localtime:ro \
-		-v /tmp/.X11-unix:/tmp/.X11-unix \
-		--net none \
-		-v /etc \
-		-v /home/user/.dbus \
-		-v /home/user/.cache/dconf \
-		-e DISPLAY=unix$DISPLAY \
-		--name notify_osd \
-		jess/notify-osd
-}
-
-
-osd(){
-	relies_on notify_osd
-	docker exec -i notify_osd notify-send $@
-}
-
-
-pomodoro() {
-	if [ "$1" == "log" ]; then
-		cat ${HOME}/.pomodoro.log
-		return
-	fi
-
-	echo -e $(date +"%Y.%m.%d %H:%M") "\t" $@ >> ${HOME}/.pomodoro.log
-
-	relies_on notify_osd
-	
-	docker exec -i notify_osd notify-send  -t 0 '25 minutes are up'
-
-}
-
 glances() {
 	del_stopped glances
 	
@@ -44,6 +8,29 @@ glances() {
 		--pid host \
 		--name glances \
 		-it docker.io/nicolargo/glances
+}
+
+htop() {
+	del_stopped htop
+	docker run --rm -it --pid host jess/htop
+}
+
+jq_test() {
+	del_stopped jq
+	docker run --rm -it jess/jq
+}
+
+spotify_test() {
+	 docker run -d \
+		-v /etc/localtime:/etc/localtime:ro \
+		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-e DISPLAY=unix$DISPLAY \
+		--device /dev/snd:/dev/snd \
+		-v $HOME/.spotify/config:/home/spotify/.config/spotify \
+		-v $HOME/.spotify/cache:/home/spotify/spotify \
+		--name spotify \
+		jess/spotify
+
 }
 
 docker-tools() {
