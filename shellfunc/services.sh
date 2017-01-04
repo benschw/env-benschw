@@ -43,3 +43,14 @@ fabio() {
 		--name=fabio \
 		magiconair/fabio
 }
+
+rabbitmq() {
+
+	del_stopped rabbitmq
+
+	docker run -d \
+		-p 5672:5672 \
+		-p 15672:15672 \
+		--name rabbitmq \
+		benschw/horde-rabbitmq
+}

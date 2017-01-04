@@ -13,7 +13,7 @@ export HORDE_DNS=10.1.7.100
 export HORDE_IP=172.17.0.1
 export GO15VENDOREXPERIMENT=1
 
-export GOROOT=/opt/go
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
@@ -38,4 +38,3 @@ alias bashup="source ~/.bashrc"
 
 alias nyan="docker run -it supertest2014/nyan"
 
-#fortune -a -s | cowsay -f tux | lolcat
