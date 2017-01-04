@@ -53,3 +53,11 @@ docker-tools() {
 		--name docker-tools \
 		-it benschw/tools
 }
+mysql-server-docker() {
+	del_stopped mysqlserver
+
+	docker run -d \
+		-p 3306:3306 \
+		--name mysqlserver \
+		benschw/horde-mysql
+}

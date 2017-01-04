@@ -1,6 +1,7 @@
 #!/bin/bash
 eval `dircolors $ENV_ROOT/dircolors`
 
+#export JAVA_HOME="/usr/lib/jvm/default-java/jre/"
 
 PS1='\w\$ '
 
@@ -9,7 +10,7 @@ export EDITOR='vim'
 export PAGER='less'
 
 export HORDE_DNS=10.1.7.100
-
+export HORDE_IP=172.17.0.1
 export GO15VENDOREXPERIMENT=1
 
 export GOROOT=/opt/go
@@ -23,7 +24,6 @@ export PATH=$PATH:/opt/terraform/current
 . ~/.env/shellfunc/common.sh
 . ~/.env/shellfunc/misc-docker.sh
 . ~/.env/shellfunc/services.sh
-. ~/.env/shellfunc/fl.sh
 . ~/.env/shellfunc/aws.sh
 
 
