@@ -33,3 +33,6 @@ alias bashup="source ~/.bashrc"
 alias nyan="docker run -it supertest2014/nyan"
 
 #fortune -a -s | lolcat
+export LD_LIBRARY_PATH='/usr/lib/vlc'
+export VLC_PLUGIN_PATH='/usr/lib/vlc/plugins'
+
