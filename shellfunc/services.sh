@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# edit `/etc/systemd/system/multi-user.target.wants/docker.service` to contain:
+# `ExecStart=/usr/bin/docker daemon --dns 172.17.0.1 -H fd://¬`
+# and run `sudo systemctl daemon-reload` and `sudo service docker restart`
+
 consul() {
 	ip=$(docker_bridge_ip)
 
@@ -7,11 +11,9 @@ consul() {
 
 	docker run -d \
 		-p 8500:8500 \
+		-p "$ip:53:8600/udp" \
 		--name=consul \
-		--net=host \
-		gliderlabs/consul-server:latest \
-		-bootstrap \
-		-advertise=$ip
+		gliderlabs/consul-server:latest -bootstrap -advertise=$ip -recursor=8.8.8.8
 }
 
 registrator() {
@@ -25,9 +27,7 @@ registrator() {
 		--name=registrator \
 		--net=host \
 		--volume=/var/run/docker.sock:/tmp/docker.sock \
-		gliderlabs/registrator:latest \
-		-ip $ip\
-		consul://localhost:8500 
+		gliderlabs/registrator:latest -ip $ip consul://localhost:8500
 }
 
 fabio() {
@@ -42,7 +42,6 @@ fabio() {
 		-e "SERVICE_IGNORE=true" \
 		--name=fabio \
 		magiconair/fabio
-
 }
 
 rabbitmq() {

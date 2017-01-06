@@ -3,3 +3,5 @@
 	name = Ben Schwartz
 [push]
 	default = simple
+[core]
+	autocrlf = input
