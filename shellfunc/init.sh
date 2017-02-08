@@ -1,5 +1,10 @@
 #!/bin/bash
-eval `dircolors $ENV_ROOT/dircolors`
+
+if [ command -v dircolors >/dev/null 2>&1 ]; then
+	eval `dircolors $ENV_ROOT/dircolors`
+else
+	alias ls="ls -G"
+fi
 
 #export JAVA_HOME="/usr/lib/jvm/default-java/jre/"
 
