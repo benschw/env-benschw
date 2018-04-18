@@ -46,11 +46,11 @@ fabio() {
 
 rabbitmq() {
 
-	del_stopped rabbitmq
+	del_stopped rabbitmqlocal
 
 	docker run -d \
 		-p 5672:5672 \
 		-p 15672:15672 \
-		--name rabbitmq \
-		benschw/horde-rabbitmq
+		--name rabbitmqlocal \
+		rabbitmq:3.6-management
 }

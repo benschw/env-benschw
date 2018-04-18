@@ -1,6 +1,6 @@
 #!/bin/bash
 
-glances() {
+glances_docker() {
 	del_stopped glances
 	
 	docker run \
@@ -10,7 +10,7 @@ glances() {
 		-it docker.io/nicolargo/glances
 }
 
-htop() {
+htop_docker() {
 	del_stopped htop
 	docker run --rm -it --pid host jess/htop
 }
@@ -38,6 +38,7 @@ docker-tools() {
 	
 	docker run \
 		--name docker-tools \
+		-v `pwd`:/home \
 		-it benschw/tools
 }
 mysql-server-docker() {
@@ -48,3 +49,32 @@ mysql-server-docker() {
 		--name mysqlserver \
 		benschw/horde-mysql
 }
+
+ecr-pull() {
+	local image="$1"
+
+	if [ -z "${1+x}" ]; then
+		echo "Usage: ecr-pull IMAGE"
+		echo
+		echo "   ex: ecr-pull kasasa/springboard:latest"
+		return
+	fi
+
+	eval $(AWS_PROFILE=ops aws ecr get-login --registry-ids 304872096477 --no-include-email --region us-west-2)
+	docker pull "304872096477.dkr.ecr.us-west-2.amazonaws.com/${image}"
+	docker tag "304872096477.dkr.ecr.us-west-2.amazonaws.com/${image}" "${image}"
+}
+
+mysql-localdev() {
+	echo Restarting mysql on port 3306
+	HORDE_MYSQL_PUBLISH_PORT=3306 horde restart mysql
+
+	echo Adding cimysql user
+	docker run -it --rm --link mysql:mysql benschw/horde-mysql \
+			sh -c 'exec mysql -h$MYSQL_PORT_3306_TCP_ADDR -u admin -pchangeme -e "GRANT ALL ON *.* TO cimysql@'\''%'\'' IDENTIFIED BY '\''cimysql-password'\'' WITH GRANT OPTION; FLUSH PRIVILEGES"'
+
+
+}
+
+
+

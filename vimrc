@@ -37,7 +37,7 @@ set tabstop=4                   " 4 ch tabs
 set shiftwidth=4                " indent 3 ch on tab
 
 set swapfile
-set dir=~/tmp                   " change where .swp files go
+set dir=~/.vimswp               " change where .swp files go
 
 let loaded_matchparen = 1       " don't highlight matching parens
 

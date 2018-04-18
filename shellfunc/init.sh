@@ -5,6 +5,7 @@ if [ command -v dircolors >/dev/null 2>&1 ]; then
 else
 	alias ls="ls -G"
 fi
+export PATH=/Users/ben.schwartz/.local/bin:$PATH
 
 #export JAVA_HOME="/usr/lib/jvm/default-java/jre/"
 
@@ -15,8 +16,18 @@ export EDITOR='vim'
 export PAGER='less'
 
 export HORDE_DNS=10.1.7.100
-export HORDE_IP=172.17.0.1
+export HORDE_IP=172.20.20.1
+#export HORDE_SERVICES=splunk
+export AWSPROXY_USER=ben.schwartz
+export AWSPROXY_SSHKEY=/Users/ben.schwartz/.ssh/id_rsa
+export AWSPROXY_ENV=dev
+
+
 export GO15VENDOREXPERIMENT=1
+
+export VAULT_ADDR=http://localhost:8200
+export VAULT_TOKEN=horde
+
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -29,7 +40,6 @@ export PATH=$PATH:/opt/terraform/current
 . ~/.env/shellfunc/common.sh
 . ~/.env/shellfunc/misc-docker.sh
 . ~/.env/shellfunc/services.sh
-. ~/.env/shellfunc/aws.sh
 
 
 #https://github.com/jfrazelle/dotfiles/blob/master/.dockerfunc
@@ -47,3 +57,11 @@ alias nyan="docker run -it supertest2014/nyan"
 export LD_LIBRARY_PATH='/usr/lib/vlc'
 export VLC_PLUGIN_PATH='/usr/lib/vlc/plugins'
 
+. ~/.chores-google-sso-creds.sh
+
+if [ $(uname) == "Darwin" ]; then
+	defaults write NSGlobalDomain KeyRepeat -int 3         # normal minimum is 15 (225 ms)
+	defaults write NSGlobalDomain InitialKeyRepeat -int 20 # normal minimum is 2 (30 ms)
+	defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+	defaults write com.googlecode.iterm2 PerformDNSLookups -bool false
+fi

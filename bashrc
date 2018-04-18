@@ -1,6 +1,9 @@
 
 ENV_ROOT=$HOME/.env
 
+export PATH="/usr/local/opt/php@5.6/bin:$PATH"
+export PATH="/usr/local/opt/php@5.6/sbin:$PATH"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -68,3 +71,6 @@ export NVM_DIR="/home/ben/.nvm"
 
 # added by travis gem
 [ -f /home/ben/.travis/travis.sh ] && source /home/ben/.travis/travis.sh
+
+# added by travis gem
+[ -f /Users/ben.schwartz/.travis/travis.sh ] && source /Users/ben.schwartz/.travis/travis.sh
