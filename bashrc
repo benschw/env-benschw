@@ -1,8 +1,10 @@
 
 ENV_ROOT=$HOME/.env
 
-export PATH="/usr/local/opt/php@5.6/bin:$PATH"
-export PATH="/usr/local/opt/php@5.6/sbin:$PATH"
+#export PATH="/usr/local/opt/php@5.6/bin:$PATH"
+#export PATH="/usr/local/opt/php@5.6/sbin:$PATH"
+#export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+#export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
 
 # If not running interactively, don't do anything
 case $- in

@@ -5,7 +5,8 @@ if [ command -v dircolors >/dev/null 2>&1 ]; then
 else
 	alias ls="ls -G"
 fi
-export PATH=/Users/ben.schwartz/.local/bin:$PATH
+export PATH="/Users/ben.schwartz/.local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 #export JAVA_HOME="/usr/lib/jvm/default-java/jre/"
 
@@ -17,6 +18,7 @@ export PAGER='less'
 
 export HORDE_DNS=10.1.7.100
 export HORDE_IP=172.20.20.1
+export HORDE_MYSQL_PUBLISH_PORT=3306
 #export HORDE_SERVICES=splunk
 export AWSPROXY_USER=ben.schwartz
 export AWSPROXY_SSHKEY=/Users/ben.schwartz/.ssh/id_rsa
@@ -64,4 +66,11 @@ if [ $(uname) == "Darwin" ]; then
 	defaults write NSGlobalDomain InitialKeyRepeat -int 20 # normal minimum is 2 (30 ms)
 	defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 	defaults write com.googlecode.iterm2 PerformDNSLookups -bool false
+
 fi
+
+export CLUSTER_NAME=k8s.dev.ksops.net
+export K8S_ROLE_ARN=arn:aws:iam::969204706979:role/kasasa-architecture
+
+export CC_PATH=$HOME/dev/component-config
+export PATH=~/.composer/vendor/bin:$PATH

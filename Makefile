@@ -37,11 +37,7 @@ basic: ## configure tmux, vim, ctags, fonts
 	@echo "=> Now run \`:GoInstallBinaries\` within vim"
 
 misc: ## misc packages: lolcat
-<<<<<<< HEAD
 	sudo apt-get install -y lolcat fortune cowsay
-=======
-	sudo apt-get install -y lolcat fortune-mod
->>>>>>> 45c0b1a9e571246b936415d34bf661c03ad4cbad
 
 docker:
 	sudo apt-get install -y apt-transport-https ca-certificates linux-image-extra-`uname -r`
