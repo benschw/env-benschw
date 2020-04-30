@@ -8,6 +8,10 @@
 	
 	ln -s $HOME/.env/gitconfig $HOME/.gitconfig
 
+### add Mac user to Administrators group
+
+	dscl . -append /groups/admin GroupMembership USERNAME
+
 ### urxvt
 
 	# rxvt & clipboard perl

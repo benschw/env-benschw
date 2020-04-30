@@ -49,9 +49,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "bundle/nginx-vim-syntax"]
-	path = bundle/nginx-vim-syntax
-	url = https://github.com/evanmiller/nginx-vim-syntax.git
 [submodule "bundle/vimproc.vim"]
 	path = bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git

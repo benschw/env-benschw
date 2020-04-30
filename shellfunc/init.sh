@@ -59,7 +59,7 @@ alias nyan="docker run -it supertest2014/nyan"
 export LD_LIBRARY_PATH='/usr/lib/vlc'
 export VLC_PLUGIN_PATH='/usr/lib/vlc/plugins'
 
-. ~/.chores-google-sso-creds.sh
+#. ~/.chores-google-sso-creds.sh
 
 if [ $(uname) == "Darwin" ]; then
 	defaults write NSGlobalDomain KeyRepeat -int 3         # normal minimum is 15 (225 ms)

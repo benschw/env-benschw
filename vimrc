@@ -3,6 +3,10 @@ let &runtimepath.=',~/.env'
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+" Mac TouchBar is BS
+" ==================
+
+inoremap jj <esc>       " use jj to escape edit mode. you can also use caps lock by updating modifier keys in os x keyboard settings
 
 " General
 " =======
