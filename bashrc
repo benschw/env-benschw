@@ -82,3 +82,11 @@ export SDKMAN_DIR="/Users/ben.schwartz/.sdkman"
 [[ -s "/Users/ben.schwartz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ben.schwartz/.sdkman/bin/sdkman-init.sh"
 
 [ -f $HOME/.bash_profile_local ] && source $HOME/.bash_profile_local
+
+#export PATH=$PATH:~/android-sdk
+
+dc-npm() {
+	docker-compose run --rm command npm $@
+}
+
+

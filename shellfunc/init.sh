@@ -16,6 +16,8 @@ export EDITOR='vim'
 export EDITOR='vim'
 export PAGER='less'
 
+export HORDE_ENSURE_VBOXNET=true
+
 export HORDE_DNS=10.1.7.100
 export HORDE_IP=172.20.20.1
 export HORDE_MYSQL_PUBLISH_PORT=3306
