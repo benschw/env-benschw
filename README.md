@@ -12,13 +12,6 @@
 
 	dscl . -append /groups/admin GroupMembership USERNAME
 
-### urxvt
-
-	# rxvt & clipboard perl
-	apt-get install rxvt-unicode-256color xsel
-
-	ln -s $HOME/.env/Xdefaults $HOME/.Xdefaults
-
 
 ### Fonts
 
@@ -32,12 +25,16 @@
 http://superuser.com/questions/552863/bash-home-end-delete-key-inserting-tilde-or-if-preceded-by-escape-key-1-3
 
 
+	ln -s $HOME/.env/bashrc $HOME/.bashrc
+
+
 ### Tmux
 
 	ln -s $HOME/.env/tmux.conf $HOME/.tmux.conf
 	
 ### Vim
 
+	ln -s $HOME/.env/vim $HOME/.vim
 	ln -s $HOME/.env/vimrc $HOME/.vimrc
 	
 	# in vim
@@ -73,4 +70,11 @@ http://superuser.com/questions/552863/bash-home-end-delete-key-inserting-tilde-o
 
 	# usage
 	ctags .
+
+### urxvt
+
+	# rxvt & clipboard perl
+	apt-get install rxvt-unicode-256color xsel
+
+	ln -s $HOME/.env/Xdefaults $HOME/.Xdefaults
 
