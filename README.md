@@ -43,6 +43,13 @@ http://superuser.com/questions/552863/bash-home-end-delete-key-inserting-tilde-o
 	# in vim
 	:GoInstallBinaries
 
+	# manage packages
+	git submodule add https://github.com/foo/vim-bar vim/pack/test/start/vim-bar
+	git submodule update --remote --merge
+	git submodule deinit vim/pack/test/start/vim-bar
+	git rm vim/pack/test/start/vim-bar
+	rm -Rf .git/modules/vim/pack/test/start/vim-bar
+
 #### Key Bindings
 	
 	\q                - quick notes
