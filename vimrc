@@ -134,7 +134,7 @@ let NERDTreeWinSize = 35
 " Colors
 " ======
 set t_Co=256
-"colorscheme molokai
+colorscheme molokai
 ""let g:solarized_termcolors=256
 ""let g:solarized_visibility="low"
 ""let g:solarized_contrast="high"

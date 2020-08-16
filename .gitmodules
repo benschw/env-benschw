@@ -1,0 +1,21 @@
+[submodule "vim/pack/test/start/nerdtree"]
+	path = vim/pack/test/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule "vim/pack/test/start/vim-airline"]
+	path = vim/pack/test/start/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "vim/pack/test/start/molokai"]
+	path = vim/pack/test/start/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "vim/pack/test/start/vim-go"]
+	path = vim/pack/test/start/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "vim/pack/test/start/vim-markdown"]
+	path = vim/pack/test/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/pack/test/start/sensible"]
+	path = vim/pack/test/start/sensible
+	url = https://tpope.io/vim/sensible.git
+[submodule "vim/pack/test/start/php.vim"]
+	path = vim/pack/test/start/php.vim
+	url = https://github.com/StanAngeloff/php.vim.git
