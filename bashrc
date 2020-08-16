@@ -1,10 +1,6 @@
+# vim: set filetype=sh :
 
 ENV_ROOT=$HOME/.env
-
-#export PATH="/usr/local/opt/php@5.6/bin:$PATH"
-#export PATH="/usr/local/opt/php@5.6/sbin:$PATH"
-#export PATH="/usr/local/opt/php@7.3/bin:$PATH"
-#export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
 
 # If not running interactively, don't do anything
 case $- in
@@ -44,9 +40,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # some more ls aliases
 
 
@@ -71,22 +64,4 @@ export NVM_DIR="/home/ben/.nvm"
 . $ENV_ROOT/shellfunc/init.sh
 
 
-# added by travis gem
-[ -f /home/ben/.travis/travis.sh ] && source /home/ben/.travis/travis.sh
-
-# added by travis gem
-[ -f /Users/ben.schwartz/.travis/travis.sh ] && source /Users/ben.schwartz/.travis/travis.sh
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/ben.schwartz/.sdkman"
-[[ -s "/Users/ben.schwartz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ben.schwartz/.sdkman/bin/sdkman-init.sh"
-
 [ -f $HOME/.bash_profile_local ] && source $HOME/.bash_profile_local
-
-#export PATH=$PATH:~/android-sdk
-
-dc-npm() {
-	docker-compose run --rm command npm $@
-}
-
-

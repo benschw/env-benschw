@@ -58,8 +58,8 @@ alias bashup="source ~/.bashrc"
 alias nyan="docker run -it supertest2014/nyan"
 
 #fortune -a -s | lolcat
-export LD_LIBRARY_PATH='/usr/lib/vlc'
-export VLC_PLUGIN_PATH='/usr/lib/vlc/plugins'
+#export LD_LIBRARY_PATH='/usr/lib/vlc'
+#export VLC_PLUGIN_PATH='/usr/lib/vlc/plugins'
 
 #. ~/.chores-google-sso-creds.sh
 
@@ -71,8 +71,8 @@ if [ $(uname) == "Darwin" ]; then
 
 fi
 
-export CLUSTER_NAME=k8s.dev.ksops.net
-export K8S_ROLE_ARN=arn:aws:iam::969204706979:role/kasasa-architecture
+#export CLUSTER_NAME=k8s.dev.ksops.net
+#export K8S_ROLE_ARN=arn:aws:iam::969204706979:role/kasasa-architecture
 
 export CC_PATH=$HOME/dev/component-config
 export PATH=~/.composer/vendor/bin:$PATH
