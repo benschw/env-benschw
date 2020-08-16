@@ -8,10 +8,6 @@
 	
 	ln -s $HOME/.env/gitconfig $HOME/.gitconfig
 
-### add Mac user to Administrators group
-
-	dscl . -append /groups/admin GroupMembership USERNAME
-
 
 ### Fonts
 
@@ -24,7 +20,11 @@
 ### bash
 http://superuser.com/questions/552863/bash-home-end-delete-key-inserting-tilde-or-if-preceded-by-escape-key-1-3
 
-
+	brew install bash
+	sudo -s
+	echo /usr/local/bin/bash >> /etc/shells
+	chsh -s /usr/local/bin/bash
+	
 	ln -s $HOME/.env/bashrc $HOME/.bashrc
 
 
@@ -77,4 +77,8 @@ http://superuser.com/questions/552863/bash-home-end-delete-key-inserting-tilde-o
 	apt-get install rxvt-unicode-256color xsel
 
 	ln -s $HOME/.env/Xdefaults $HOME/.Xdefaults
+
+### add Mac user to Administrators group
+
+	dscl . -append /groups/admin GroupMembership USERNAME
 
