@@ -1,3 +1,7 @@
+#let &runtimepath.=',~/.env'
+
+#runtime bundle/vim-pathogen/autoload/pathogen.vim
+#execute pathogen#infect()
 
 " Mac TouchBar is BS
 " ==================
@@ -134,9 +138,9 @@ let NERDTreeWinSize = 35
 " Colors
 " ======
 set t_Co=256
-"colorscheme molokai
-""let g:solarized_termcolors=256
-""let g:solarized_visibility="low"
-""let g:solarized_contrast="high"
-""colorscheme solarized
+colorscheme molokai
+"let g:solarized_termcolors=256
+"let g:solarized_visibility="low"
+"let g:solarized_contrast="high"
+"colorscheme solarized
 set background=dark
